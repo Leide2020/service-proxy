@@ -112,7 +112,7 @@ public class JDBCUtil {
 
 	public static final String CREATE_SEQUENCE = "CREATE SEQUENCE " + SEQUENCE_STATISTIC;
 	public static final String CREATE_TRIGGER = "CREATE TRIGGER " + TRIGGER_STATISTIC + " BEFORE INSERT ON " + TABLE_NAME + " FOR EACH ROW BEGIN IF (:new.id IS NULL) THEN SELECT " + SEQUENCE_STATISTIC + ".nextval INTO :new.id FROM DUAL; END IF; END; ";
-	public static final String COUNT_ALL = "select count(*) from " +TABLE_NAME;
+	public static final String COUNT_ALL = "select count(*) [cont] from " +TABLE_NAME;
 
 	public static String getPreparedInsertStatement(boolean idGenerated){
 
